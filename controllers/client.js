@@ -1,7 +1,8 @@
 import db from "../models/db";
-import { bookUser, deleteBooking } from '../models/client'
+import { bookUser, deleteBooking, getAllScheduler} from '../models/client'
 
 class Client{
+
 
   static async booking(req, res){
     try {
@@ -13,7 +14,6 @@ class Client{
 
       return res.status(200).json({
         status: 200,
-        message: "Clubs successful",
         data: [...addBooking.rows]
       });
 
@@ -36,6 +36,24 @@ class Client{
         });
 
     }catch (err) {
+    return res.status(500).json({
+      status: 500,
+      error: err.message
+    });
+  }
+  }
+
+  static async scheduler(req, res){
+    const {week} = req.query;
+    try {
+      const AllScheduler = await db.query(getAllScheduler, [week]);
+
+      return res.status(200).json({
+        status: 200,
+        data: [...AllScheduler.rows]
+      });
+
+  } catch (err) {
     return res.status(500).json({
       status: 500,
       error: err.message
