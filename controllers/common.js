@@ -23,6 +23,8 @@ class Common{
   }
   }
   static async getAllAgents(req, res){
+    const {date} = req.query
+    console.log(date, '<><><><><');
     try {  
       const agents = await db.query(getAllAgents);
   
