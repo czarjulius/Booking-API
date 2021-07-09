@@ -5,6 +5,6 @@ import Authenticate from '../middlewares/authorisation'
 
 const router = express.Router();
 
-router.get('/scheduler', Authenticate, agentExist, isAdmin, Business.scheduler);
+router.get('/scheduler', Business.scheduler);
 
 export default router;

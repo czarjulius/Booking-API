@@ -5,9 +5,9 @@ class Client{
 
   static async booking(req, res){
     try {
-      const { start_at, finish_at } = req.body;
-      const user_id = 1
-      const booked_by = 1
+      const { start_at, finish_at, user_id } = req.body;
+      const booked_by = req.X_Agent_Id;
+
 
       const addBooking = await db.query(bookUser, [start_at, finish_at, user_id, booked_by]);
 
