@@ -1,5 +1,5 @@
 import db from "../models/db";
-import { bookUser } from '../models/client'
+import { bookUser, deleteBooking } from '../models/client'
 
 class Client{
 
@@ -18,6 +18,24 @@ class Client{
       });
 
   } catch (err) {
+    return res.status(500).json({
+      status: 500,
+      error: err.message
+    });
+  }
+  }
+  static async deleteBooking(req, res){
+    try {
+      const { id } = req.params;
+    
+        await db.query(deleteBooking, [id]);
+
+        return res.status(200).json({
+          status: 200,
+          message: "Deleted successfully",
+        });
+
+    }catch (err) {
     return res.status(500).json({
       status: 500,
       error: err.message
