@@ -5,8 +5,8 @@ class Common{
 
   static async getUserByAgent(req, res){
     try {
-      const agent_id = 1;
-  
+      const agent_id = req.X_Agent_Id;
+
       const users = await db.query(getUserByAgent, [agent_id]);
   
         return res.status(200).json({
@@ -23,8 +23,6 @@ class Common{
   }
   }
   static async getAllAgents(req, res){
-    const {date} = req.query
-    console.log(date, '<><><><><');
     try {  
       const agents = await db.query(getAllAgents);
   
