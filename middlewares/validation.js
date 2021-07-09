@@ -18,7 +18,7 @@ export const isAgent = async (req, res, next) => {
   const X_Agent_Id = req.X_Agent_Id;
   const agent = await db.query(role, [X_Agent_Id]);
   const agentRole = agent?.rows[0]?.name
-  if (agentRole !== "Regular" || agentRole !== "Admin") {
+  if (agentRole !== "Regular" && agentRole !== "Admin") {
     res.status(404).json({
       status: 404,
       error: 'You are not an agent',

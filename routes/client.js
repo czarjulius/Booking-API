@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post('/booking', Authenticate, agentExist, isAdmin, Client.booking);
 router.delete('/booking/:id', Authenticate, agentExist, isAdmin, Client.deleteBooking);
-router.get('/schedulers', Authenticate, agentExist, isAgent, Client.deleteBooking);
+router.get('/schedulers', Authenticate, agentExist, isAgent, Client.scheduler);
 
 export default router;

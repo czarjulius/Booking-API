@@ -14,7 +14,7 @@ class Client{
 
       return res.status(200).json({
         status: 200,
-        data: [...addBooking.rows]
+        data: {...addBooking.rows}
       });
 
   } catch (err) {

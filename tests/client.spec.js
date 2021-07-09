@@ -5,8 +5,8 @@ import server from '../server';
 
 const api = supertest(server);
 
-describe('Subtask controller', async () => {
-  describe('Create subtask ', () => {
+describe('Business controller', async () => {
+  describe('Create scheduler ', () => {
     it('should return a status of 200', (done) => {
       api.get('/api/v1/scheduler')
         .end((err, res) => {
