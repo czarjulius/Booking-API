@@ -1,9 +1,11 @@
 import "@babel/polyfill";
 import express from "express";
+import router from "./routes/index";
 
 const app = express();
 
 app.use(express.json());
+app.use(router);
 
 app.get("/", (req, res) => {
   res.send(" Welcome To Booking APP");
