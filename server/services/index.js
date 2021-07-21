@@ -1,3 +1,7 @@
-import { createBooking } from './client.service';
+import {
+  createBooking,
+  deleteBooking,
+  getAllBookingsInWeek
+} from './client.service';
 
-export { createBooking };
+export { createBooking, deleteBooking, getAllBookingsInWeek };

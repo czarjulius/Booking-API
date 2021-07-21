@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 const environment = {
   development: {
     APP_PORT: process.env.APP_PORT,

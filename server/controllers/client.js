@@ -1,10 +1,9 @@
-import db from '../models/db';
-import { createBooking } from '../services';
+import * as ClientService from '../services';
 
 class Client {
   static async booking(req, res, next) {
     try {
-      const { rows } = await createBooking(req.body);
+      const { rows } = await ClientService.createBooking(req.body);
       res.json({
         code: 200,
         message: 'Booking created successfully',
@@ -14,38 +13,29 @@ class Client {
       next(error);
     }
   }
-  static async deleteBooking(req, res) {
+  static async deleteBooking(req, res, next) {
     try {
-      const { id } = req.params;
-
-      await db.query(deleteBooking, [id]);
-
-      return res.status(200).json({
-        status: 200,
-        message: 'Deleted successfully'
+      await ClientService.deleteBooking(req.params.id);
+      res.json({
+        code: 200,
+        message: 'Booking deleted successfully'
       });
-    } catch (err) {
-      return res.status(500).json({
-        status: 500,
-        error: err.message
-      });
+    } catch (error) {
+      next(error);
     }
   }
 
-  static async scheduler(req, res) {
-    const { week } = req.query;
+  static async scheduler(req, res, next) {
     try {
-      const AllScheduler = await db.query(getAllScheduler, [week]);
-
-      return res.status(200).json({
-        status: 200,
-        data: [...AllScheduler.rows]
+      const data = await ClientService.getAllBookingsInWeek(req.query.week);
+      console.log(data, '<><><><><><>');
+      res.json({
+        code: 200,
+        data,
+        message: 'Bookings fetched successfully'
       });
-    } catch (err) {
-      return res.status(500).json({
-        status: 500,
-        error: err.message
-      });
+    } catch (error) {
+      next(error);
     }
   }
 }
