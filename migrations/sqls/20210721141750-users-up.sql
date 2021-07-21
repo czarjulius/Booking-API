@@ -1,0 +1,9 @@
+/* Replace with your SQL commands */
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50),
+  email VARCHAR(255) UNIQUE NOT NULL,
+  role VARCHAR(255),
+  createdAt DATE DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATE DEFAULT CURRENT_TIMESTAMP
+)

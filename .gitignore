@@ -1,2 +1,14 @@
-/node_modules
+.DS_Store
+npm-debug.log
+node_modules/
+coverage/
+tmp/
+dist
 .env
+.nyc_output
+package-lock.json
+.vscode/
+.nyc_output
+logs
+build/
+public
