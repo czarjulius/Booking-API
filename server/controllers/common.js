@@ -1,39 +1,28 @@
-import db from '../models/db';
-import { getUserByAgent, getAllAgents } from '../models/common';
+import * as CommonService from '../services';
 
 class Common {
-  static async getUserByAgent(req, res) {
+  static async getUserByAgent(req, res, next) {
     try {
-      const agentId = req.agentId;
-
-      const users = await db.query(getUserByAgent, [agentId]);
-
-      return res.status(200).json({
-        status: 200,
-        message: 'Fetched successfully',
-        data: users.rows
+      const data = await CommonService.getAllAgentUsers(req.params.agentid);
+      res.json({
+        code: 200,
+        data,
+        message: 'Agent users fetched successfully'
       });
-    } catch (err) {
-      return res.status(500).json({
-        status: 500,
-        error: err.message
-      });
+    } catch (error) {
+      next(error);
     }
   }
-  static async getAllAgents(req, res) {
+  static async getAllAgents(req, res, next) {
     try {
-      const agents = await db.query(getAllAgents);
-
-      return res.status(200).json({
-        status: 200,
-        message: 'Fetched successfully',
-        data: agents.rows
+      const data = await CommonService.getAllAgents();
+      res.json({
+        code: 200,
+        data,
+        message: 'All agents fetched successfully'
       });
-    } catch (err) {
-      return res.status(500).json({
-        status: 500,
-        error: err.message
-      });
+    } catch (error) {
+      next(error);
     }
   }
 }

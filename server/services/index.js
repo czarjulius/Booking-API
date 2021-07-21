@@ -4,4 +4,12 @@ import {
   getAllBookingsInWeek
 } from './client.service';
 
-export { createBooking, deleteBooking, getAllBookingsInWeek };
+import { getAllAgentUsers, getAllAgents } from './common.services';
+
+export {
+  createBooking,
+  deleteBooking,
+  getAllBookingsInWeek,
+  getAllAgentUsers,
+  getAllAgents
+};

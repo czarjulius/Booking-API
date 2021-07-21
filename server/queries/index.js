@@ -5,11 +5,14 @@ import {
   checkBookingExist,
   getAllBookingsInWeek
 } from './client';
+import { getAllAgents, getAllUsers } from './common';
 
 export {
   bookUser,
   checkAgentHasUser,
   deleteBooking,
   checkBookingExist,
-  getAllBookingsInWeek
+  getAllBookingsInWeek,
+  getAllAgents,
+  getAllUsers
 };
