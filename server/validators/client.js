@@ -4,7 +4,7 @@ import { baseReqBodyValidator, baseReqParamsValidator } from './index';
 
 export const newBooking = (req, res, next) => {
   const schema = Joi.object({
-    userId: Joi.any().required(),
+    userId: Joi.any().required().empty(),
     agentId: Joi.any().required(),
     startAt: Joi.string().required(),
     finishAt: Joi.string().required()
