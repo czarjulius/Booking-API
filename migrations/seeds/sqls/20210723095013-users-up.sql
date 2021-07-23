@@ -1,4 +1,5 @@
 /* Replace with your SQL commands */
+/* Replace with your SQL commands */
 INSERT INTO
   users (name, email, role)
 VALUES

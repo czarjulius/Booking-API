@@ -6,7 +6,7 @@ class Common {
       const data = await CommonService.getAllAgentUsers(req.params.agentid);
       res.json({
         code: 200,
-        data,
+        data: data.rows[0],
         message: 'Agent users fetched successfully'
       });
     } catch (error) {

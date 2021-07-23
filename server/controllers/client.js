@@ -28,7 +28,6 @@ class Client {
   static async scheduler(req, res, next) {
     try {
       const data = await ClientService.getAllBookingsInWeek(req.query.week);
-      console.log(data, '<><><><><><>');
       res.json({
         code: 200,
         data,

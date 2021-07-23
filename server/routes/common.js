@@ -5,7 +5,12 @@ import { isAdmin, adminAndRegular } from '../middlewares/validateRole';
 
 const router = express.Router();
 
-router.get('/users', Authenticate, adminAndRegular, Common.getUserByAgent);
+router.get(
+  '/users/:agentid',
+  Authenticate,
+  adminAndRegular,
+  Common.getUserByAgent
+);
 router.get('/agents', Authenticate, isAdmin, Common.getAllAgents);
 
 export default router;

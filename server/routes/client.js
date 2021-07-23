@@ -6,7 +6,7 @@ import { newBooking, bookingId } from '../validators/client';
 const router = express.Router();
 
 router.post('/booking', Authenticate, isAdmin, newBooking, Client.booking);
-router.delete('/booking/:id', bookingId, Client.deleteBooking);
+router.delete('/booking/:id', bookingId, isAdmin, Client.deleteBooking);
 router.get('/schedulers', Authenticate, adminAndRegular, Client.scheduler);
 
 export default router;

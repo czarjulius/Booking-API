@@ -1,13 +1,5 @@
 export function appErrorHandler(err, req, res, next) {
   if (err.code && typeof err.code === 'number') {
-    console.error(`
-      status - ${err.code}
-      message - ${err.stack || err.message} 
-      url - ${req.originalUrl} 
-      method - ${req.method} 
-      IP - ${req.ip}
-    `);
-
     res.status(err.code).json({
       code: err.code,
       data: err.data || null,

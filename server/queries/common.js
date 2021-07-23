@@ -1,8 +1,8 @@
 const getAllUsers = (agentId) => `
-SELECT us.id, us.name, us.email, us.created_at from users_agents ua
+SELECT us.id, us.name, us.email, us.createdat from users_agents ua
   INNER JOIN users us 
-  ON us.id = ua.user_id  
-  where ua.agent_id = ${agentId}
+  ON us.id = ua.userid  
+  where ua.agentid = ${agentId}
 `;
 const getAllAgents = `SELECT * from users where role = 'admin'`;
 

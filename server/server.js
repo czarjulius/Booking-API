@@ -1,6 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
+import 'dotenv/config';
 
 import {
   appErrorHandler,
