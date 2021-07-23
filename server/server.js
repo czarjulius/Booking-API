@@ -33,7 +33,7 @@ app.use('*', (req, res) =>
 
 app.use(genericErrorHandler);
 
-const port = process.env.PORT || 8080;
+const port = process.env.APP_PORT || 8080;
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
