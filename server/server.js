@@ -3,10 +3,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import 'dotenv/config';
 
-import {
-  appErrorHandler,
-  genericErrorHandler
-} from './middlewares/error.middleware';
+import { appErrorHandler, genericErrorHandler } from './middlewares';
 import router from './routes/index';
 import './configs/db';
 

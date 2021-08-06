@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-import { baseReqBodyValidator, baseReqParamsValidator } from './index';
+import { baseReqBodyValidator, baseReqParamsValidator } from './client';
 
 export const newBooking = (req, res, next) => {
   const schema = Joi.object({

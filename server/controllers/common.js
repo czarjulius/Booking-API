@@ -27,4 +27,4 @@ class Common {
   }
 }
 
-export default Common;
+export { Common };
