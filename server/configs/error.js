@@ -7,4 +7,4 @@ class AppError extends Error {
     this.code = code || 500;
   }
 }
-export default AppError;
+export { AppError };

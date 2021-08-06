@@ -25,4 +25,4 @@ runQuery('SELECT 1').then(() => {
   console.log('Connected to Pg Database');
 });
 
-export default runQuery;
+export { runQuery };

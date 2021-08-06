@@ -1,4 +1,4 @@
-import runQuery from './../configs/db';
+import { runQuery } from './../configs/';
 import * as Client from '../queries';
 import { AppError } from './../configs';
 

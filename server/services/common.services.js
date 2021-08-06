@@ -1,4 +1,4 @@
-import runQuery from './../configs/db';
+import { runQuery } from './../configs';
 import * as Common from '../queries';
 
 export const getAllAgentUsers = async (agentId) => {

@@ -1,2 +1,2 @@
-export * from './db';
-export * from './error';
+export { runQuery } from './db';
+export { AppError } from './error';

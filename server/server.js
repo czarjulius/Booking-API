@@ -5,7 +5,7 @@ import 'dotenv/config';
 
 import { appErrorHandler, genericErrorHandler } from './middlewares';
 import { router } from './routes';
-import './configs/db';
+import './configs';
 
 const app = express();
 
