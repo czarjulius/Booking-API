@@ -1,3 +1,1 @@
-import dbEnv from './db.env';
-
-export { dbEnv };
+export { environment as dbEnv } from './db.env';

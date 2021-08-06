@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-const environment = {
+let environment = {
   development: {
     APP_PORT: process.env.APP_PORT,
     APP_HOST: process.env.APP_HOST,
@@ -33,4 +33,6 @@ const environment = {
   }
 };
 
-export default environment[process.env.NODE_ENV || 'development'];
+environment = environment[process.env.NODE_ENV || 'development'];
+
+export { environment };
