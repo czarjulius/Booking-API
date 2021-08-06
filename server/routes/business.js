@@ -5,4 +5,4 @@ const router = express.Router();
 
 router.get('/scheduler', Business.scheduler);
 
-export default router;
+export { router };

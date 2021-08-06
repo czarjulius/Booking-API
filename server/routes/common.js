@@ -13,4 +13,4 @@ router.get(
 );
 router.get('/agents', Authenticate, isAdmin, Common.getAllAgents);
 
-export default router;
+export { router };

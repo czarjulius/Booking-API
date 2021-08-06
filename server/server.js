@@ -4,7 +4,7 @@ import cors from 'cors';
 import 'dotenv/config';
 
 import { appErrorHandler, genericErrorHandler } from './middlewares';
-import router from './routes/index';
+import { router } from './routes';
 import './configs/db';
 
 const app = express();
